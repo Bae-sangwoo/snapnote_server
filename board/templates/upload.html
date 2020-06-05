@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block contents %}
+    <h2>파일 업로드</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="document">
+        <button type="submit">업로드</button>
+    </form>
+    {% if url %}
+        <!-- <P>업로드된 파일: <a href="{{ board.url }}">{{ url }}</a></P> -->
+        <P>업로드된 파일: {{ url }}</P> 
+        
+    {% endif %}
+{% endblock %}

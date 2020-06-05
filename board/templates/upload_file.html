@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block contents %}
+    <h2>파일 업로드</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        <button type="submit" class="btn btn-primary">Upload file</button>
+        <button type="button" class="btn btn-primary" onclick="location.href='/board/files/'">돌아가기</button>
+      
+    </form>
+{% endblock %}
